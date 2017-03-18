@@ -1,1 +1,5 @@
+tlb_core:
+    resource: "@TLBCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 
