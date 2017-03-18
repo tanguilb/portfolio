@@ -1,0 +1,30 @@
+.head-img {
+    width: 100%;
+    height: 400px;
+    background-image: url(../pictures/fineas-anton-136460.jpg);
+    background-size: cover;
+    background-position: top center;
+}
+#title {
+    position: absolute;
+    top: 17%;
+    width: 100%;
+    text-align: center;
+}
+
+#title h1 {
+    font-size: 3em;
+    color: #ffffff;
+}
+
+#title h2 {
+    font-size: 2em;
+    color: #ffffff;
+}
+.head-title {
+    height: 35px;
+}
+
+#menu, #footer {
+    background-color: #cfd1ac;
+}
