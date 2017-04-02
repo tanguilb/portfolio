@@ -1,30 +1,88 @@
 .head-img {
     width: 100%;
-    height: 400px;
-    background-image: url(../pictures/fineas-anton-136460.jpg);
+    height: 1000px;
+    background-image: url(../pictures/patrick-lindenberg-191841.jpg);
     background-size: cover;
     background-position: top center;
 }
 #title {
     position: absolute;
-    top: 17%;
+    top: 30%;
     width: 100%;
     text-align: center;
 }
 
 #title h1 {
-    font-size: 3em;
-    color: #ffffff;
+    font-size: 5em;
+    font-style: inherit;
+    color: #412722;
 }
 
 #title h2 {
-    font-size: 2em;
-    color: #ffffff;
+    font-size: 3em;
+    color: #B7122B;
 }
 .head-title {
     height: 35px;
 }
 
 #menu, #footer {
-    background-color: #cfd1ac;
+    background-color: #ffffff;
+}
+#imgprofim {
+    width: 300px;
+}
+
+#mountain {
+    background-image: url(../pictures/fineas-anton-136460.jpg);
+}
+
+.imgfix{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+#about-me {
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+.separator {
+    width: 100%;
+    height: 20px;
+    background-color: #D59C88;
+}
+
+.skills {
+    background-color: #B0413E;
+    text-align: center;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+#social-presentation{
+    padding-top: 70px;
+
+    margin: 0;
+}
+
+#social-presentation li{
+    display: inline-block;
+    font-size: 2.3em;
+    margin: 0 auto;
+    width: 30px;
+    padding-right: 10px;
+}
+
+#social-presentation a{
+    color: #FFFFFF;
+}
+
+#social-presentation a:hover{
+    color: #B0413E;
 }
