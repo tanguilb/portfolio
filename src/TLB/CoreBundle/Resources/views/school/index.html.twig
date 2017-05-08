@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Schools list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Schoolname</th>
+                <th>Shortdescription</th>
+                <th>Longdescritption</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for school in schools %}
+            <tr>
+                <td><a href="{{ path('school_show', { 'id': school.id }) }}">{{ school.id }}</a></td>
+                <td>{{ school.schoolName }}</td>
+                <td>{{ school.shortDescription }}</td>
+                <td>{{ school.longDescritption }}</td>
+                <td>{% if school.date %}{{ school.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('school_show', { 'id': school.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('school_edit', { 'id': school.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('school_new') }}">Create a new school</a>
+        </li>
+    </ul>
+{% endblock %}

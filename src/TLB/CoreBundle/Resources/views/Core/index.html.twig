@@ -40,15 +40,28 @@
         <div class="col-md-6 col-xs-12 skills">
             <h3>Mes compétences</h3>
             <ul>
-                <li>
-                    <div class="col-xs-6">HTML</div>
-                    <div class="col-xs-6"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></div>
-                </li>
-
-            </ul>
+                {% for skill in skills %}
+                    <li>
+                        <div class="col-xs-6">{{ skill.name }}</div>
+                            <div class="col-xs-6">
+                                {% for i in 0..skill.value %}
+                                    {% if i > 0 %}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                        {% endif %}
+                                {% endfor %}
+                                {% for y in 0..(skill.value - 6) %}
+                                    {% if y < 0 %}
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        {% endif %}
+                                {% endfor %}
+                            </div>
+                    </li>
+                {% endfor %}
+        </ul>
         </div>
         <div class="col-md-6 col-xs-12 study">
             <h3>Mon parcours</h3>
+            {{ dump(schools) }}
         </div>
 
 

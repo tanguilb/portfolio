@@ -9,11 +9,21 @@
 namespace TLB\CoreBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class CoreController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        return $this->render("TLBCoreBundle:Core:index.html.twig");
+        $repository = $this->getDoctrine()->getRepository('TLBCoreBundle:Skills');
+        $skills = $repository->findAll();
+        $repo = $this->getDoctrine()->getRepository('TLBCoreBundle:School');
+        $schools = $repo->findAll();
+        return $this->render("TLBCoreBundle:Core:index.html.twig", array(
+            'skills' => $skills,
+            'schools' => $schools,
+        ));
     }
+    
+    
 }
