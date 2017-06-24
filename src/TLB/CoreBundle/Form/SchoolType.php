@@ -5,6 +5,7 @@ namespace TLB\CoreBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class SchoolType extends AbstractType
 {
@@ -13,7 +14,17 @@ class SchoolType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('schoolName')->add('shortDescription')->add('longDescritption')->add('date')        ;
+        $builder
+            ->add('schoolName')
+            ->add('shortDescription')
+            ->add('longDescritption')
+            ->add('date')
+            ->add('schoolLog', VichImageType::class, array(
+                'label' => 'Télécharge le Logo de ton école',
+                'required' => false,
+                'download_link' => false,
+             ))
+        ;
     }
     
     /**
