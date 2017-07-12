@@ -1,0 +1,11 @@
+core_homepage:
+    path: /
+    defaults: { _controller: "TLBCoreBundle:Core:index" }
+
+tlb_core_skills:
+    resource: "@TLBCoreBundle/Controller/SkillsController.php"
+    type:     annotation
+
+tlb_core_school:
+    resource: "@TLBCoreBundle/Controller/SchoolController.php"
+    type:     annotation

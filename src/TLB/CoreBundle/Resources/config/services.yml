@@ -1,0 +1,4 @@
+services:
+#    tlb_core.example:
+#        class: TLB\CoreBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

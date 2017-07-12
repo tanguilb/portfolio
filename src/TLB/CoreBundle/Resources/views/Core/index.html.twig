@@ -1,0 +1,118 @@
+{% extends 'TLBCoreBundle::layout.html.twig' %}
+{% block title %}Accueil - {{  parent() }}{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="head-img">
+            <div id="title">
+                <h1>Je suis Tangui Le Bourdonnec</h1>
+                <h2>Développeur web PHP Symfony</h2>
+            </div>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <section class="container-fluid imgfix" id="mountain">
+        <div class="container">
+            <div class="col-xs-12">
+                <ul id="social-presentation">
+                    <a href="https://github.com/tanguilb" target="_blank"><li><i class="fa fa-github" aria-hidden="true"></i></li></a>
+                    <a href="https://www.linkedin.com/in/tangui-le-bourdonnec/" target="_blank"><li><i class="fa fa-linkedin" aria-hidden="true"></i></li></a>
+                    <a href="https://twitter.com/tanguilb8?lang=fr" target="_blank"><li><i class="fa fa-twitter" aria-hidden="true"></i></li></a>
+                    <a href="#" target="_blank"><li><i class="fa fa-file-pdf-o" aria-hidden="true"></i></li></a>
+                </ul>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <img id="imgprofim" src="{{ asset('pictures/profile.jpeg') }}" alt="photo de profil">
+            </div>
+            <div class="col-md-8 col-xs-12">
+                <h3>Qui je suis</h3>
+
+                <p id="about-me">Je suis un ancien éducateur spécialisé. J'ai travaillé principalement avec les jeunes en insertions. <br/>
+                    J'ai découvert une nouvelle passion: <strong>le code.</strong><br/>
+                J'ai étudié pendant 5 mois le langage PHP et le framework symfony à la Wild Code School de Lyon. J'ai égalemnent mis en pratique la méthode scrum pour réaliser deux projets pour des clients au cours de cette formation intensive.
+                <br />Suite à cette formation j'effectue un stage au sein de la fondation OVE pour développer une platforme qui devrait aider les personnes en situation de handicap à se retrouver dans la complexité des démarches.</p>
+
+            </div>
+        </div>
+    </section>
+    <section id="skills-and-study">
+        <div class="col-md-6 col-xs-12 skills">
+            <h3>Mes compétences</h3>
+            <ul>
+                {% for skill in skills %}
+                    <li>
+                        <div class="col-xs-6">{{ skill.name }}</div>
+                            <div class="col-xs-6">
+                                {% for i in 0..skill.value %}
+                                    {% if i > 0 %}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                        {% endif %}
+                                {% endfor %}
+                                {% for y in 0..(skill.value - 6) %}
+                                    {% if y < 0 %}
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        {% endif %}
+                                {% endfor %}
+                            </div>
+                    </li>
+                {% endfor %}
+        </ul>
+        </div>
+        <div class="col-md-6 col-xs-12 study">
+            <h3>Mon parcours</h3>
+            {{ dump(schools) }}
+        </div>
+
+
+
+    </section>
+    <section id="portfolio">
+        <div class="head-title"></div>
+
+        <h3>Portfolio</h3>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+    </section>
+    <section id="contact">
+        <div class="head-title"></div>
+        <h3>Contact</h3>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+    </section>
+{% endblock %}
