@@ -86,3 +86,7 @@
 #social-presentation a:hover{
     color: #B0413E;
 }
+
+#skills-and-study li {
+    list-style-type: none;
+}

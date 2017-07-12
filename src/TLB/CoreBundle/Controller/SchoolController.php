@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * School controller.
  *
- * @Route("school")
+ * @Route("admin/school")
  */
 class SchoolController extends Controller
 {
@@ -26,7 +26,7 @@ class SchoolController extends Controller
 
         $schools = $em->getRepository('TLBCoreBundle:School')->findAll();
 
-        return $this->render('school/index.html.twig', array(
+        return $this->render('TLBCoreBundle:school:index.html.twig', array(
             'schools' => $schools,
         ));
     }
@@ -91,7 +91,7 @@ class SchoolController extends Controller
             return $this->redirectToRoute('school_edit', array('id' => $school->getId()));
         }
 
-        return $this->render('school/edit.html.twig', array(
+        return $this->render('TLBCoreBundle:school:edit.html.twig', array(
             'school' => $school,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

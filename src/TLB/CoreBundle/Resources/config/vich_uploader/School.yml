@@ -1,4 +1,0 @@
-TLB\CoreBundle\Entity\School:
-    schoolLogoFile:
-        mapping: school_logo
-        filename_property: schoolLogo

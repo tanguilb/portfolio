@@ -74,16 +74,11 @@ class School
     private $schoolLogoUpdatedAt;
 
     /**
-     * @Vich\UploadableField(mapping="school_logo", fileNameProperty="schoolLogo", size="imageSize")
+     * @Vich\UploadableField(mapping="school_logo", fileNameProperty="schoolLogo")
      *
      * @var File
      */
     private $schoolLogoFile;
-
-    /**
-     * @ORM\Column(name="logo_size", type="integer")
-     */
-    private $logoSize;
 
     /**
      * Get id
@@ -229,24 +224,5 @@ class School
         return $this->schoolLogoFile;
     }
 
-    /**
-     * @param integer $logoSize
-     *
-     * @return School
-     */
-    public function setLogoSize($logoSize)
-    {
-        $this->logoSize = $logoSize;
-
-        return $this;
-    }
-
-    /**
-     * @return integer|null
-     */
-    public function getLogoSize()
-    {
-        return $this->logoSize;
-    }
 
 }

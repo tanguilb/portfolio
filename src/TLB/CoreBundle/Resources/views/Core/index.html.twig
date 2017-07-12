@@ -36,42 +36,50 @@
             </div>
         </div>
     </section>
-    <section id="skills-and-study">
+    <section id="skills-and-study" class="col-xs-12">
         <div class="col-md-6 col-xs-12 skills">
             <h3>Mes compétences</h3>
             <ul>
                 {% for skill in skills %}
                     <li>
-                        <div class="col-xs-3"><img src="images/skillsLogo/{{ skill.logoName }}"></div>
-                        <div class="col-xs-3">{{ skill.name }}</div>
-                            <div class="col-xs-6">
-                                {% for i in 0..skill.value %}
-                                    {% if i > 0 %}
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                        {% endif %}
-                                {% endfor %}
-                                {% for y in 0..(skill.value - 6) %}
-                                    {% if y < 0 %}
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        {% endif %}
-                                {% endfor %}
-                            </div>
+                        {#<div class="col-xs-3"><img src="images/skillsLogo/{{ skill.logoName }}" alt="Logo de {{ skill.name }}"></div>#}
+                        <div class="col-xs-6">{{ skill.name }}</div>
+                        <div class="col-xs-6">
+                            {% for i in 0..skill.value %}
+                                {% if i > 0 %}
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                    {% endif %}
+                            {% endfor %}
+                            {% for y in 0..(skill.value - 6) %}
+                                {% if y < 0 %}
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    {% endif %}
+                            {% endfor %}
+                        </div>
                     </li>
                 {% endfor %}
         </ul>
         </div>
         <div class="col-md-6 col-xs-12 study">
             <h3>Mon parcours</h3>
-            {{ dump(schools) }}
+            <ul>
+                {% for school in schools %}
+                    <li>
+                        <div class="col-xs-12"><img src="images/schoolLogo/{{ school.schoolLogo }}" alt="Logo de {{ school.schoolName }}" ></div>
+                        <div class="col-xs-12">{{ school.schoolName }}</div>
+                        <div class="col-xs-12">{{ school.shortDescription }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
 
 
 
     </section>
-    <section id="portfolio">
+    <section id="portfolio" class="col-xs-12">
         <div class="head-title"></div>
 
-        <h3>Portfolio</h3>
+        <h3>Mes trois dernier projets</h3>
             <br/>
             <br/>
             <br/>

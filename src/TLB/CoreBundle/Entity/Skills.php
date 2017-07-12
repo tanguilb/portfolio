@@ -57,7 +57,7 @@ class Skills
 
     /**
      * @ORM\Column(name="updated_at", type="datetime")
-     *
+         *
      * @var DateTime
      */
     private $updatedAt;

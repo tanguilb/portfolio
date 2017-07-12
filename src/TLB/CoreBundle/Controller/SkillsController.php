@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Skill controller.
  *
- * @Route("skills")
+ * @Route("admin/skills")
  */
 class SkillsController extends Controller
 {

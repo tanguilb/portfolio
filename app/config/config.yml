@@ -80,3 +80,7 @@ vich_uploader:
         school_logo:
             uri_prefix: /images/schoolLogo
             upload_destination: '%kernel.root_dir%/../web/images/schoolLogo'
+
+        project_image:
+            uri_prefix: /images/projectImage
+            upload_destination: '%kernel.root_dir%/../web/images/projectImage'
