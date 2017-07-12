@@ -42,7 +42,8 @@
             <ul>
                 {% for skill in skills %}
                     <li>
-                        <div class="col-xs-6">{{ skill.name }}</div>
+                        <div class="col-xs-3"><img src="images/skillsLogo/{{ skill.logoName }}"></div>
+                        <div class="col-xs-3">{{ skill.name }}</div>
                             <div class="col-xs-6">
                                 {% for i in 0..skill.value %}
                                     {% if i > 0 %}

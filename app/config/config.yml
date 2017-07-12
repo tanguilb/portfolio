@@ -73,6 +73,10 @@ swiftmailer:
 vich_uploader:
     db_driver: orm
     mappings:
+        skills_logo:
+            uri_prefix: /images/skillsLogo
+            upload_destination: '%kernel.root_dir%/../web/images/skillsLogo'
+
         school_logo:
             uri_prefix: /images/schoolLogo
             upload_destination: '%kernel.root_dir%/../web/images/schoolLogo'

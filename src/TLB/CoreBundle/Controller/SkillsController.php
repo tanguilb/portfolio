@@ -5,7 +5,8 @@ namespace TLB\CoreBundle\Controller;
 use TLB\CoreBundle\Entity\Skills;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Skill controller.
@@ -26,7 +27,7 @@ class SkillsController extends Controller
 
         $skills = $em->getRepository('TLBCoreBundle:Skills')->findAll();
 
-        return $this->render('skills/index.html.twig', array(
+        return $this->render('TLBCoreBundle:skills:index.html.twig', array(
             'skills' => $skills,
         ));
     }
@@ -91,7 +92,7 @@ class SkillsController extends Controller
             return $this->redirectToRoute('skills_edit', array('id' => $skill->getId()));
         }
 
-        return $this->render('skills/edit.html.twig', array(
+        return $this->render('TLBCoreBundle:skills:edit.html.twig', array(
             'skill' => $skill,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

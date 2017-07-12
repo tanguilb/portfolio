@@ -9,3 +9,4 @@ tlb_core_skills:
 tlb_core_school:
     resource: "@TLBCoreBundle/Controller/SchoolController.php"
     type:     annotation
+

@@ -2,13 +2,17 @@
 
 namespace TLB\CoreBundle\Entity;
 
+use Symfony\Component\Validator\Constraints\DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Skills
  *
  * @ORM\Table(name="skills")
  * @ORM\Entity(repositoryClass="TLB\CoreBundle\Repository\SkillsRepository")
+ * @Vich\Uploadable
  */
 class Skills
 {
@@ -36,11 +40,27 @@ class Skills
     private $description;
 
     /**
-     * @var string
+     * @Vich\UploadableField(mapping="skills_logo", fileNameProperty="logoName")
      *
-     * @ORM\Column(name="logo", type="string", length=255, nullable=true)
+     * @var File
+     *
      */
-    private $logo;
+    private $logoFile;
+
+    /**
+     * @ORM\Column(name="logo_name", type="string", length=255, nullable=true)
+     *
+     * @var string
+     */
+    private $logoName;
+
+
+    /**
+     * @ORM\Column(name="updated_at", type="datetime")
+     *
+     * @var DateTime
+     */
+    private $updatedAt;
 
     /**
      * @var integer
@@ -108,15 +128,39 @@ class Skills
     }
 
     /**
-     * Set logo
-     *
-     * @param string $logo
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $logos
      *
      * @return Skills
      */
-    public function setLogo($logo)
+    public function setLogoFile(File $logos = null)
     {
-        $this->logo = $logo;
+        $this->logoFile = $logos;
+
+        if($logos) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getLogoFile()
+    {
+        return $this->logoFile;
+    }
+
+    /**
+     * Set logo
+     *
+     * @param string $logoName
+     *
+     * @return Skills
+     */
+    public function setLogoName($logoName)
+    {
+        $this->logoName = $logoName;
 
         return $this;
     }
@@ -124,12 +168,13 @@ class Skills
     /**
      * Get logo
      *
-     * @return string
+     * @return string|null
      */
-    public function getLogo()
+    public function getLogoName()
     {
-        return $this->logo;
+        return $this->logoName;
     }
+
 
     /**
      * Set value
